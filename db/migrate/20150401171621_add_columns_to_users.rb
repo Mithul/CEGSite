@@ -3,6 +3,7 @@ class AddColumnsToUsers < ActiveRecord::Migration
   	# To idetify if user is student,proff,club
     add_column :users, :category, :string
     add_column :users, :department, :reference
+    add_column :users, :phone, :string
     # Student specific
     add_column :users, :degree, :string
     add_column :users, :roll_no, :string

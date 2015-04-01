@@ -33,3 +33,7 @@ group :development, :test do
   gem 'pry-rescue'
   gem 'rubocop'
 end
+#Added
+gem 'ckeditor'
+gem 'paperclip'
+gem 'acts-as-taggable-on'

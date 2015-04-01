@@ -1,9 +1,15 @@
 class User < ActiveRecord::Base
-  enum role: [:user, :vip, :admin]
+  enum role: [:student, :staff, :club, :admin]
   after_initialize :set_default_role, :if => :new_record?
 
+  belongs_to :project
+
   def set_default_role
-    self.role ||= :user
+  	if User.count == 0
+	    self.role = :admin
+	else
+		self.role = :student
+	end
   end
 
   # Include default devise modules. Others available are:
