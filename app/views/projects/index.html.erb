@@ -44,7 +44,7 @@
         <% end %>
         <td><%= link_to 'Show', project %></td>
         <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if project.members.include? current_user %></td>
       </tr>
     <% end %>
   </tbody>
@@ -52,4 +52,6 @@
 
 <br>
 
-<%= link_to 'New Project', new_project_path %>
+<% if current_user and current_user.category == 'student' %>
+  <%= link_to 'New Project', new_project_path %>
+<% end %>
