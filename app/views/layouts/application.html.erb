@@ -1,22 +1,264 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Ceg Site" %></title>
-    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Ceg Site" %>">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-      <div class="container">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
+<head>
+  <title>CEGSite</title>
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<!-- Wrap all page content here -->
+<div id="wrap">
+  
+
+<!--start of title page-->
+
+<header class="masthead">
+    <div class="container">
+    <div class="row">
+    <div class="col-md-3">
+        
       </div>
+
+      <div class="col-md-6">
+        <h1 id = "ceg" style = 'font-family: Copperplate,"Copperplate Gothic Light",fantasy,80px;'><a href="#" title="Bootstrap Template">College <br>Of <br>Engineering</a>
+          
+      </div>
+      <div class="col-md-3">
+        
+          
+      </div>
+    </div>
+    </div>
+</header>
+ 
+<!--end of title page-->
+
+
+
+
+
+  
+<!-- start of navbar -->
+
+<div class="navbar navbar-custom navbar-inverse navbar-static-top" id="nav">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav nav-justified">
+          <li><a href="#">Home</a></li>
+          <li><a href="#section2">Product</a></li>
+          <li><a href="#section3">News</a></li>
+          <li class="active"><a href="#section1"><strong>Big Brand</strong></a></li>
+          <li><a href="#section4">About</a></li>
+          <li><a href="#section5">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">SignUp/SignIn <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
+              <li><a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></div></li>
+              
+            </ul>
+          </li>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container -->
+</div><!--/.navbar -->
+  
+
+
+<!-- start of navbar -->
+
+
+
+
+<!--login/signup-->
+
+<div class="container">
+        
+       
+         
+         <div class="modal fade login" id="loginModal">
+              <div class="modal-dialog login animated">
+                  <div class="modal-content">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Login with</h4>
+                    </div>
+                    <div class="modal-body">  
+                        <div class="box">
+                             <div class="content">
+                                <div class="social">
+                                    <a class="circle github" href="/auth/github">
+                                        <i class="fa fa-github fa-fw"></i>
+                                    </a>
+                                    <a id="google_login" class="circle google" href="/auth/google_oauth2">
+                                        <i class="fa fa-google-plus fa-fw"></i>
+                                    </a>
+                                    <a id="facebook_login" class="circle facebook" href="/auth/facebook">
+                                        <i class="fa fa-facebook fa-fw"></i>
+                                    </a>
+                                </div>
+                                <div class="division">
+                                    <div class="line l"></div>
+                                      <span>or</span>
+                                    <div class="line r"></div>
+                                </div>
+                                <div class="error"></div>
+                                <div class="form loginBox">
+                                    <form method="post" action="/login" accept-charset="UTF-8">
+                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
+                                    </form>
+                                </div>
+                             </div>
+                        </div>
+                        <div class="box">
+                            <div class="content registerBox" style="display:none;">
+                             <div class="form">
+                                <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
+                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
+                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
+                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
+                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="forgot login-footer">
+                            <span>Looking to 
+                                 <a href="javascript: showRegisterForm();">create an account</a>
+                            ?</span>
+                        </div>
+                        <div class="forgot register-footer" style="display:none">
+                             <span>Already have an account?</span>
+                             <a href="javascript: showLoginForm();">Login</a>
+                        </div>
+                    </div>        
+                  </div>
+              </div>
+          </div>
+    </div>
+
+
+<!--end of login/signup-->
+
+
+
+
+<div class="divider" id="section1"></div>
+ 
+
+<!--start of about -->  
+
+<div class="container">
+  <div class="col-sm-10 col-sm-offset-1">
+    <div class="page-header text-center">
+      <h1>About</h1>
+    </div>
+    
+    <p class="lead text-center">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit consectetur adipisicing elit
+    </p>
+    <p class="text-center">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium soluta deleniti enim perspiciatis? Itaque a, deleniti exercitationem. Alias nihil, expedita nam, sit laudantium obcaecati, repudiandae quis amet in magnam, eligendi.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium, cupiditate illo. Inventore obcaecati labore suscipit culpa, voluptas, ad quos itaque harum doloremque, odit dolorum incidunt omnis. Error veritatis facilis rerum.
+    </p>
+  </div>
+</div>
+
+<!--end of about -->
+
+<!--start of events -->
+
+<div class="divider" id="section2"></div>
+  
+<section class="bg-1">
+  <div class="col-sm-6 col-sm-offset-3 text-center"><h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Know More About CEG</h2></div>
+</section>
+  
+
+   
+<div class="container" style = "height:400px;"id="section3">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <h1>EVENTS</h1>
+      
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa fugit dignissimos itaque nulla quam saepe autem provident sed reiciendis deserunt, nesciunt blanditiis deleniti veniam distinctio, beatae nam totam debitis aliquid.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eum autem fuga ab voluptatum, accusamus deserunt, hic animi cum doloremque quidem voluptas! Fuga debitis laboriosam nulla unde praesentium, ad alias.
+      </p>
+      
+    </div><!--/col-->
+</div><!--/container-->
+
+
+<!-- end of events -->
+
+<section class="bg-1">
+  <div class="col-sm-6 col-sm-offset-3 text-center"><h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Check out our Events Page</h2></div>
+</section>
+
+
+<div class="container" style = "height:400px;"id="section3">
+    <div class="col-sm-8 col-sm-offset-2 text-center">
+      <h1>PROJECTS</h1>
+      
+      <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa fugit dignissimos itaque nulla quam saepe autem provident sed reiciendis deserunt, nesciunt blanditiis deleniti veniam distinctio, beatae nam totam debitis aliquid.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore eum autem fuga ab voluptatum, accusamus deserunt, hic animi cum doloremque quidem voluptas! Fuga debitis laboriosam nulla unde praesentium, ad alias.
+      </p>
+      
+    </div><!--/col-->
+</div><!--/container-->
+
+
+  
+<section class="bg-3" id="section4">
+  <div class="col-sm-6 col-sm-offset-3 text-center"><h2 style="padding:20px;background-color:rgba(5,5,5,.8)">Check out the Projects Section</h2></div>
+</section>
+  
+
+
+
+
+
+  
+</div><!--/wrap-->
+
+
+
+
+
+
+<!--start of footer -->
+
+
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Coded wid love by <a href="http://www.annauniv.edu">CTF</p>
+  </div>
+</div>
+
+<!--end of footer -->
+
+
+
+<!-- move up icon-->
+
+<!-- <ul class="nav pull-right scroll-top">
+  <li><a href="#" title="Scroll to top"><i class="glyphicon glyphicon-chevron-up"></i></a></li>
+</ul> -->
+
+<!-- move up icon-->
+
     </main>
     <script type="text/javascript">
     $(function() {
@@ -37,4 +279,5 @@
     });
     </script>
   </body>
+</body>
 </html>

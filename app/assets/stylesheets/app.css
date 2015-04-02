@@ -1,0 +1,530 @@
+/*title*/
+
+#ceg { color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 75px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }
+
+
+/*title*/
+
+
+/*slider*/
+.jssorb05 {
+                    position: absolute;
+                }
+                .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                    position: absolute;
+                    /* size of bullet elment */
+                    width: 16px;
+                    height: 16px;
+                    background: url(../img/b05.png) no-repeat;
+                    overflow: hidden;
+                    cursor: pointer;
+                }
+                .jssorb05 div { background-position: -7px -7px; }
+                .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+                .jssorb05 .av { background-position: -67px -7px; }
+                .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+            </style>
+            <!-- bullet navigator container -->
+            <div u="navigator" class="jssorb05" style="bottom: 16px; right: 6px;">
+                <!-- bullet navigator item prototype -->
+                <div u="prototype"></div>
+            </div>
+            <!--#endregion Bullet Navigator Skin End -->
+            
+            <!--#region Arrow Navigator Skin Begin -->
+            <!-- Help: http://www.jssor.com/development/slider-with-arrow-navigator-jquery.html -->
+            <style>
+                /* jssor slider arrow navigator skin 11 css */
+                /*
+                .jssora11l                  (normal)
+                .jssora11r                  (normal)
+                .jssora11l:hover            (normal mouseover)
+                .jssora11r:hover            (normal mouseover)
+                .jssora11l.jssora11ldn      (mousedown)
+                .jssora11r.jssora11rdn      (mousedown)
+                */
+                .jssora11l, .jssora11r {
+                    display: block;
+                    position: absolute;
+                    /* size of arrow element */
+                    width: 37px;
+                    height: 37px;
+                    cursor: pointer;
+                    background: url(../img/a11.png) no-repeat;
+                    overflow: hidden;
+                }
+                .jssora11l { background-position: -11px -41px; }
+                .jssora11r { background-position: -71px -41px; }
+                .jssora11l:hover { background-position: -131px -41px; }
+                .jssora11r:hover { background-position: -191px -41px; }
+                .jssora11l.jssora11ldn { background-position: -251px -41px; }
+                .jssora11r.jssora11rdn { background-position: -311px -41px; }
+
+
+/*das
+slider ends
+*/
+
+
+
+/*
+
+login/signup
+
+*/
+
+/*
+ *
+ * login-register modal
+ * Autor: Creative Tim
+ * Web-autor: creative.tim
+ * Web script: http://creative-tim.com
+ * 
+ */
+ 
+/*  Shake animation  */
+
+@charset "UTF-8";
+
+.animated {
+  -webkit-animation-duration: 1s;
+     -moz-animation-duration: 1s;
+       -o-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+     -moz-animation-fill-mode: both;
+       -o-animation-fill-mode: both;
+          animation-fill-mode: both;
+}
+
+.animated.hinges {
+  -webkit-animation-duration: 2s;
+     -moz-animation-duration: 2s;
+       -o-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.animated.slow {
+  -webkit-animation-duration: 3s;
+     -moz-animation-duration: 3s;
+       -o-animation-duration: 3s;
+          animation-duration: 3s;
+}
+
+.animated.snail {
+  -webkit-animation-duration: 4s;
+     -moz-animation-duration: 4s;
+       -o-animation-duration: 4s;
+          animation-duration: 4s;
+}
+
+@-webkit-keyframes shake {
+  0%, 100% {-webkit-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-webkit-transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {-webkit-transform: translateX(10px);}
+}
+
+@-moz-keyframes shake {
+  0%, 100% {-moz-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-moz-transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {-moz-transform: translateX(10px);}
+}
+
+@-o-keyframes shake {
+  0%, 100% {-o-transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {-o-transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {-o-transform: translateX(10px);}
+}
+
+@keyframes shake {
+  0%, 100% {transform: translateX(0);}
+  10%, 30%, 50%, 70%, 90% {transform: translateX(-10px);}
+  20%, 40%, 60%, 80% {transform: translateX(10px);}
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  -moz-animation-name: shake;
+  -o-animation-name: shake;
+  animation-name: shake;
+}
+
+.login .modal-dialog{
+    width: 350px;
+}
+.login .modal-footer{
+    border-top: 0;
+    margin-top: 0px;
+    padding: 10px 20px 20px;
+}
+.login .modal-header {
+    border: 0 none;
+    padding: 15px 15px 15px;
+/*     padding: 11px 15px; */
+}
+.login .modal-body{
+/*     background-color: #eeeeee; */
+}
+.login .division {
+    float: none;
+    margin: 0 auto 18px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.login .division .line {
+    border-top: 1px solid #DFDFDF;
+    position: absolute;
+    top: 10px;
+    width: 34%;
+}
+.login .division .line.l {
+    left: 0;
+}
+.login .division .line.r {
+    right: 0;
+}
+.login .division span {
+    color: #424242;
+    font-size: 17px;
+}
+.login .box .social {
+    float: none;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.login .social .circle{
+    background-color: #EEEEEE;
+    color: #FFFFFF;
+    border-radius: 100px;
+    display: inline-block;
+    margin: 0 17px;
+    padding: 15px;
+}
+.login .social .circle .fa{
+    font-size: 16px;
+}
+.login .social .facebook{
+    background-color: #455CA8;
+    color: #FFFFFF;
+}
+.login .social .google{
+    background-color: #F74933;
+}
+.login .social .github{
+    background-color: #403A3A;
+}
+.login .facebook:hover{
+    background-color: #6E83CD;
+}
+.login .google:hover{
+    background-color: #FF7566;
+}
+.login .github:hover{
+    background-color: #4D4D4d;;
+}
+.login .forgot {
+    color: #797979;
+    margin-left: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 100%;
+}
+.login .btn-login, .registerBox .btn-register{
+    background-color: #00BBFF;
+    border-color: #00BBFF;
+    border-width: 0;
+    color: #FFFFFF;
+    display: block;
+    margin: 0 auto;
+    padding: 15px 50px;
+    text-transform: uppercase;
+    width: 100%;
+}
+.login .btn-login:hover, .registerBox .btn-register:hover{
+    background-color: #00A4E4;
+    color: #FFFFFF;
+}
+.login .form-control{
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.09);
+    box-shadow: 0 1px 0px 0px rgba(0, 0, 0, 0.09) inset;
+    color: #FFFFFF;
+}
+.login .form-control:hover{
+    background-color: rgba(0,0,0,.16);
+}
+.login .form-control:focus{
+    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) inset;
+    background-color: rgba(0,0,0,0.23);
+    color: #FFFFFF;
+}
+.login .box .form input[type="text"], .login .box .form input[type="password"] {
+    border-radius: 3px;
+    border: none;
+    color: #333333;
+    font-size: 16px;
+    height: 46px;
+    margin-bottom: 5px;
+    padding: 13px 12px;
+    width: 100%;
+}
+
+
+@media (max-width:400px){
+    .login .modal-dialog{
+        width: 100%;
+    }
+}
+
+.big-login, .big-register{
+    background-color: #00bbff;
+    color: #FFFFFF;
+    border-radius: 7px;
+    border-width: 2px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    padding: 16px 60px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+}
+.big-login:hover{
+    background-color: #00A4E4;
+    color: #FFFFFF;
+}
+.big-register{
+    background-color: rgba(0,0,0,.0);
+    color: #00bbff;
+    border-color: #00bbff;
+}
+.big-register:hover{
+    border-color: #00A4E4;
+    color:  #00A4E4;
+}
+
+/*
+
+login/signup ends
+
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Kreon:400,700);
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+  -webkit-font-smoothing: antialiased;
+  font: normal 14px arial,sans-serif;
+}
+
+.row {
+  margin-left:0px;
+  margin-right:0px;
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+  margin-top:50px;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .credit {
+  margin: 20px 0;
+}
+
+#footer {
+  background-color:#414141;
+}
+
+#footer a {
+  color:#efefef;
+}
+
+h1,h2,h3,h4 {
+  font-family: 'Kreon', serif;
+  vertical-align:middle;
+}
+
+header {
+  background: #f16251;
+  height:550px;
+  color:#000000;
+}
+
+header h1,header h2,header h3 a,header a,header a:hover {
+  color:#101010;
+  font-weight:800;
+  text-decoration:none;
+}
+
+header h3 {
+  font-family: 'Kreon', serif;
+  background: #ffcc33;
+  padding:10px;
+  border-radius:3px;
+  font-size:34px;
+  padding:12px 10px 6px 10px;
+}
+
+header .dropdown-menu {
+  top:74px;
+  background: #ffcc33;
+  border-width:0;
+}
+
+h1 {
+  font-size:50px;
+}
+
+#nav {
+  width: 100%;
+  position:static;
+  top:-32px;
+}
+
+#nav.affix {
+   position: fixed;
+   top: 0;
+   z-index:10;
+   -webkit-transition: all .6s ease-in-out;
+}
+
+#footer > .container {
+  
+}
+
+@media (min-width: 767px) {
+  .navbar-nav.nav-justified > li{
+      float:none;
+  }
+}
+.navbar-nav {
+  margin: 1px 1px; 
+}  
+  
+/* customize nav style */
+.navbar-custom {
+    background-color: #2e2e2e;
+  font-weight:700;
+    text-transform:uppercase;
+    border-width:0;
+}
+.navbar-custom  .navbar-nav>li>a {
+  color: #ddd;
+}
+.navbar-custom  .navbar-nav li>a:hover, .navbar-nav li .open, .navbar-custom .navbar-nav .active a  {
+  background-color: #000;
+}
+.navbar-custom .dropdown-menu{
+  right:0;
+}
+.navbar-custom .navbar-nav>.dropdown>a .caret {
+  border-top-color: #999;
+  border-bottom-color: #999;
+}
+
+.navbar-collapse.in { /*3.0.2 bug workaround*/
+    overflow-y: visible;
+}
+
+.navbar-toggle {
+  outline:0;
+}
+
+.divider {
+  height:100px;
+}
+
+.panel {
+  border-width:0;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 95px;
+  }
+}
+
+#map-canvas {
+    width: 100%; 
+    height: 300px;
+  margin: 0;
+  padding: 15px;
+}
+
+.scroll-top {
+   position:fixed;
+   bottom:0;
+   right:6%;
+   z-index:100;
+   background: #ffcc33;
+   font-size:24px;
+   border-top-left-radius:3px;
+   border-top-right-radius:3px;
+}
+.scroll-top a:link,.scroll-top a:visited {
+  color:#222;
+} 
+ 
+
+section {
+  color: #ffffff;
+  min-height: 400px;
+  height: auto !important;
+  height: 100%;
+  padding-top:100px;
+}
+
+.bg-1 {
+  background: url('http://www.bootply.com/assets/example/bg_4.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-2 {
+  background: url('http://www.bootply.com/assets/example/bg_5.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-3 {
+  background: url('http://www.bootply.com/assets/example/bg_6.jpg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bg-4 {
+  padding-top:30px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(20,20,20,0.2)),to(rgba(255,255,255,0)), color-stop(1,#000));
+}
