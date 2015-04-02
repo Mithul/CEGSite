@@ -41,3 +41,5 @@ gem "cocoon"
 gem 'rack-zippy'
 gem 'rack-attack'
 gem 'tzinfo-data'
+gem 'pushmeup'
+gem 'gcm_on_rails'
