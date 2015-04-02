@@ -38,3 +38,5 @@ gem 'ckeditor'
 gem 'paperclip'
 gem 'acts-as-taggable-on'
 gem "cocoon"
+gem 'rack-zippy'
+gem 'rack-attack'

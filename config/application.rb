@@ -21,6 +21,7 @@ module CEGSite
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.middleware.use Rack::Attack
     config.active_record.raise_in_transactional_callbacks = true
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
