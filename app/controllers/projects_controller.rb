@@ -8,7 +8,12 @@ class ProjectsController < ApplicationController
   end
 
   def approval
-    @projects = Project.all
+    if current_user.nil?
+      redirect_to root_path
+      return
+    end
+    @projects = Project.where(:mentor => current_user)
+    render 'index'
   end
 
   def approve

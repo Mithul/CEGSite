@@ -56,7 +56,7 @@ Rails.application.configure do
   # Raises helpful error messages.
   config.assets.raise_runtime_errors = true
 
-  RAILS_ENV['GCM_key'] = "AIzaSyBCIOpxMNYWb3LE2Ys5dF2_074fOaCvbDw"
+  # Rails.env['GCM_key'] = "AIzaSyBCIOpxMNYWb3LE2Ys5dF2_074fOaCvbDw"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

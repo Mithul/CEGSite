@@ -42,4 +42,5 @@ gem 'rack-zippy'
 gem 'rack-attack'
 gem 'tzinfo-data'
 gem 'pushmeup'
-gem 'gcm_on_rails'
+gem "font-awesome-rails"
+# gem 'gcm_on_rails'
