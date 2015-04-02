@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
 
   has_and_belongs_to_many :projects
   has_many :projects
+  has_many :events
+  has_many :news
 
   def set_default_role
   	if User.count == 0
