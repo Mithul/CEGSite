@@ -9,7 +9,7 @@
 </td>
 <td>
   <%= form_for(user) do |f| %>
-    <%= f.select(:role, User.categories.keys.map {|role| [role.titleize,role]}) %>
+    <%= f.select :category, User.categories.keys.to_a.map {|category| [category.titleize,category]} %>
     <%= f.submit 'Change Category', :class => 'button-xs' %>
   <% end %>
 </td>

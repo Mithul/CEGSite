@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20150402122035) do
   create_table "projects", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "status"
+    t.integer  "status"
     t.string   "domain"
     t.integer  "mentor_id"
     t.datetime "created_at",  null: false
