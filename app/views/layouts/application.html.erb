@@ -18,5 +18,23 @@
        <%= yield %>
       </div>
     </main>
+    <script type="text/javascript">
+    $(function() {
+      $('.raptor-editable').raptor({
+        plugins: {
+          save: {
+            plugin: 'saveJson'
+          },
+          saveJson: {
+            url: '/save.php',
+            postName: 'raptor-content',
+            id: function() {
+              return this.raptor.getElement().data('id');
+            }
+          }
+        }
+      });
+    });
+    </script>
   </body>
 </html>

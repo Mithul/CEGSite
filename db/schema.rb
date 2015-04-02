@@ -36,11 +36,29 @@ ActiveRecord::Schema.define(version: 20150402061731) do
     t.datetime "updated_at",  null: false
   end
 
-# Could not dump table "events" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "events", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "date"
+    t.string   "club"
+    t.string   "location"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
 
-# Could not dump table "news" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  add_index "events", ["user_id"], name: "index_events_on_user_id"
+
+  create_table "news", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.datetime "date"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+  end
+
+  add_index "news", ["user_id"], name: "index_news_on_user_id"
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
