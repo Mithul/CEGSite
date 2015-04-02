@@ -5,6 +5,7 @@ class CreateProjects < ActiveRecord::Migration
       t.text :description
       t.string :status
       t.string :domain
+      t.references :mentor
 
       t.timestamps null: false
     end

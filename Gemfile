@@ -37,3 +37,4 @@ end
 gem 'ckeditor'
 gem 'paperclip'
 gem 'acts-as-taggable-on'
+gem "cocoon"

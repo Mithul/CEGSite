@@ -20,5 +20,17 @@
   <%= @project.domain %>
 </p>
 
+<p>
+  <strong>Mentor:</strong>
+  <%= @project.mentor %>
+</p>
+<p>
+  <strong>Memebers:</strong>
+  <% @project.members.each do |member| %>
+    <%= member.name %>
+    <br>
+  <% end %>
+</p>
+
 <%= link_to 'Edit', edit_project_path(@project) %> |
 <%= link_to 'Back', projects_path %>
