@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy, :approve]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :approve, :apply]
 
   # GET /projects
   # GET /projects.json
@@ -13,6 +13,12 @@ class ProjectsController < ApplicationController
 
   def approve
     @project.status = 'completed'
+    @project.save
+    redirect_to :back, notice: 'Project was successfully Approved.'
+  end
+
+  def apply
+    @project.status = 'pending'
     @project.save
     redirect_to :back, notice: 'Project was successfully Approved.'
   end

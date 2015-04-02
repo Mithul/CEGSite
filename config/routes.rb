@@ -14,5 +14,6 @@ Rails.application.routes.draw do
   resources :users
 
   get '/approve/:id' ,to: 'projects#approve', as: :approve
+  get '/apply/:id' ,to: 'projects#apply', as: :apply
 
 end
