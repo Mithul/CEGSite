@@ -1,4 +1,6 @@
 class Project < ActiveRecord::Base
+  	enum status: [:completed, :pending, :in_progress]
+
 	acts_as_taggable
 	# Proffessor
 	belongs_to :mentor, class_name: 'User'

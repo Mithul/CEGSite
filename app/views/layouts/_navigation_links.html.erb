@@ -1,5 +1,7 @@
 <%# add navigation links to this file %>
-<li><%= link_to 'About', page_path('about') %></li>
+<li><%= link_to 'Home', root_path %></li>
+          <li><a href="#about">About</a></li>
+<!-- <li><%= link_to 'About', page_path('about') %></li> -->
 <li><%= link_to 'News', news_index_path %></li>
 <li><%= link_to 'Projects', projects_path %></li>
 <li><%= link_to 'Events', events_path %></li>
@@ -16,3 +18,17 @@
     <li><%= link_to 'Users', users_path %></li>
   <% end %>
 <% end %>
+<!-- <li><a href="#">Home</a></li> -->
+          <!-- <li><a href="#section2">Product</a></li>
+          <li><a href="#section3">News</a></li>
+          <li class="active"><a href="#section1"><strong>Big Brand</strong></a></li>
+          <li><a href="#section4">About</a></li>
+          <li><a href="#section5">Contact</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">SignUp/SignIn <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a data-toggle="modal" href="javascript:void(0)" onclick="openLoginModal();">Log in</a></li>
+              <li><a data-toggle="modal" href="javascript:void(0)" onclick="openRegisterModal();">Register</a></div></li>
+              
+            </ul>
+          </li> -->
