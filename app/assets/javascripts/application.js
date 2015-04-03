@@ -20,6 +20,7 @@
 //= require jquery.easing.min
 //= require jquery.easy-ticker.min
 //= require news
+//= require 'aloha-config'
 /* affix the navbar after scroll below header */
 
    
@@ -91,7 +92,42 @@ function shakeModal(){
 
 $(document).ready(function(){
     
+    aloha.dom.query('.editable', document).forEach(aloha);
+    for (var command in aloha.ui.commands) {
+        $('.action-' + command).on(
+            'click',
+            aloha.ui.command(aloha.ui.commands[command])
+        );
+    }
+    $('.save').on(
+            'click',
+            function(){
+                object = $(this).parent().find('.editable');
+                content = object.html();
+                contentId = 'edited_'+object.attr('id');
+                alert(contentId);
+                var request = jQuery.ajax({
+                url: "save_static",
+                type: "POST",
+                data: {
+                content : content,
+                contentId : contentId,
+                // pageId : pageId
+                },
+                dataType: "json"
+                });
 
+                request.done(function(msg) {
+                jQuery("#log").html( msg ).show().delay(800).fadeOut();
+                });
+
+                request.error(function(jqXHR, textStatus) {
+                alert( "Request failed: " + textStatus );
+                });
+            }
+    );
+
+    
     /*************************Making the navbar sticky**********************************/
 
     $('#nav').affix({

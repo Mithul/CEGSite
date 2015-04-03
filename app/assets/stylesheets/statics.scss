@@ -1,3 +1,27 @@
 // Place all the styles related to the statics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "bootstrap-sprockets";
+@import "bootstrap";
+#log{
+	position: fixed;
+	top:0px;
+	right:0px;
+}
+
+.aloha-buttons{
+	position: fixed;
+	top:100px;
+	right: 10px;
+}
+
+.aloha-buttons button{
+	width:35px;
+	height: 35px;
+	text-align: center;
+}
+
+.save{
+	@extend .btn-success;
+	@extend .btn;
+}

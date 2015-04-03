@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   get '/approve/:id' ,to: 'projects#approve', as: :approve
   get '/approval/' ,to: 'projects#approval', as: :approval
   get '/apply/:id' ,to: 'projects#apply', as: :apply
+  post '/save_static' ,to: 'statics#save', as: :save_static
 
   namespace :api do
   namespace :v1 do

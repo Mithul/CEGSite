@@ -43,4 +43,5 @@ gem 'rack-attack'
 gem 'tzinfo-data'
 gem 'pushmeup'
 gem "font-awesome-rails"
+gem 'aloha-rails-improved', require: 'aloha/rails'
 # gem 'gcm_on_rails'

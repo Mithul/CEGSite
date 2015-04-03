@@ -5,10 +5,12 @@
 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= aloha_dependencies_cdn %>
+  <%= aloha_require_cdn %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<div id="log"></div>
 
 
 <!-- Wrap all page content here -->
@@ -120,24 +122,7 @@
 
 <!-- move up icon-->
 
-    <script type="text/javascript">
-    $(function() {
-      $('.raptor-editable').raptor({
-        plugins: {
-          save: {
-            plugin: 'saveJson'
-          },
-          saveJson: {
-            url: '/save.php',
-            postName: 'raptor-content',
-            id: function() {
-              return this.raptor.getElement().data('id');
-            }
-          }
-        }
-      });
-    });
-    </script>
+    <script src="http://www.alohaeditor.org/download/aloha.min.js"></script>
   </body>
 </body>
 </html>

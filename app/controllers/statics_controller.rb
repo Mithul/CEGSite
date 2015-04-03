@@ -13,6 +13,20 @@ class StaticsController < ApplicationController
   def show
   end
 
+  def save
+    puts params.to_json
+    name = params[:contentId].split('_')[1..-2].join('_')
+    puts name
+    static = Static.find_by_name(name)
+    if !static
+      static = Static.new
+      static.name=name
+    end
+    static.content = params[:content]
+    static.save
+    render :json => true
+  end
+
   # GET /statics/new
   def new
     @static = Static.new
