@@ -18,7 +18,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.datetime :last_sign_in_at
       t.string   :current_sign_in_ip
       t.string   :last_sign_in_ip
-      
+
       t.string :authentication_token
 
       ## Confirmable
@@ -43,3 +43,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
     # add_index :users, :unlock_token,         unique: true
   end
 end
+
+
+{"user"=>{"email"=>"mithulmathi@gmail.com","password"=>"12345678"},"base"=>{"user"=>{"email"=>"mithulmathi@gmail.com","password"=>"12345678"}}}
+{"user"=>{"email"=>"mithulmathi@gmail.com","password"=>"12345678"},"base"=>{"user"=>{"email"=>"mithulmathi@gmail.com","password"=>"12345678"}}}

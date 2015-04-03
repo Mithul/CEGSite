@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
 
    # This is our new function that comes before Devise's one
   before_filter :authenticate_user_from_token!
+  # before_filter :authorize_admin!
+  before_filter :authorize_manager!, :only => [:create]
   # This is Devise's authentication
   # before_filter :authenticate_user!
  
@@ -21,6 +23,19 @@ class ApplicationController < ActionController::Base
     if user && Devise.secure_compare(user.authentication_token, params[:user_token])
  		# puts '*'*100
       	sign_in user, store: false
+    end
+  end
+
+  def authorize_manager!
+    # puts params[:controller]
+    if !(current_user and (current_user.role == 'manager' or current_user.role == 'admin')) and !(params[:controller] =='api/v1/registrations' or params[:controller]=='api/v1/sessions')
+      redirect_to :back, :alert => 'You are not authorized!'
+    end
+  end
+
+   def authorize_admin!
+    if !(current_user and current_user.role == 'admin')
+      redirect_to :back, :alert => 'You are not authorized!'
     end
   end
 

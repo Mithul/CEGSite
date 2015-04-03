@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   enum role: [:user, :manager, :admin]
-  enum category: [:student, :staff, :club]
+  enum category: [:student, :staff, :club, :unassigned]
+  enum designation: [:HOD, :professor, :associate_proffessor, :assistant_proffessor]
   after_initialize :set_default_role, :if => :new_record?
 
   before_save :ensure_authentication_token
@@ -11,13 +12,11 @@ class User < ActiveRecord::Base
     end
   end
  
-  
-
-
   has_and_belongs_to_many :projects
   has_many :projects
   has_many :events
   has_many :news
+  belongs_to :department
 
   def set_default_role
   	if User.count == 0
@@ -25,7 +24,7 @@ class User < ActiveRecord::Base
   	else
   		self.role = :user
   	end
-    self.category = :student
+    self.category = :unassigned
   end
 
   def to_label
@@ -45,5 +44,5 @@ class User < ActiveRecord::Base
       break token unless User.where(authentication_token: token).first
     end
   end
-  
+
 end

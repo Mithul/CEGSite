@@ -31,6 +31,55 @@
         <%= f.password_field :current_password, class: 'form-control' %>
       </div>
     </fieldset>
+
+    <% if current_user.category == 'student' %>
+      <fieldset>
+        <p>You must enter your current password to make changes.</p>
+        <div class="form-group">
+          <%= f.label :roll_no %>
+          <%= f.text_field :roll_no, class: 'form-control' %>
+        </div>
+      </fieldset>
+      <fieldset>
+        <p>You must enter your current password to make changes.</p>
+        <div class="form-group">
+          <%= f.label :department %>
+          <%= f.select :department_id, options_for_select(Department.all.map{|s|[s.name, s.id]}), {},class: 'form-control' %>
+        </div>
+      </fieldset>
+      <fieldset>
+        <p>You must enter your current password to make changes.</p>
+        <div class="form-group">
+          <%= f.label :year %>
+          <%= f.text_field :year, class: 'form-control' %>
+        </div>
+      </fieldset>
+    <% elsif current_user.category == 'staff' %>
+      <fieldset>
+        <p>You must enter your current password to make changes.</p>
+        <div class="form-group">
+          <%= f.label :department %>
+          <%= f.select :department_id, options_for_select(Department.all.map{|s|[s.name, s.id]}), {}, class: 'form-control' %>
+        </div>
+      </fieldset>
+      <fieldset>
+        <p>You must enter your current password to make changes.</p>
+        <div class="form-group">
+          <%= f.label :designation %>
+          <%= f.select :designation,options_for_select(User.designations.map{|s|[s[0].titleize, s[0]]}) %>
+        </div>
+      </fieldset>
+      <fieldset>
+        <p>You must enter your current password to make changes.</p>
+        <div class="form-group">
+          <%= f.label :specialisation %>
+          <%= f.text_field :specialisation, class: 'form-control' %>
+        </div>
+      </fieldset>
+    <% end %>
+
+
+
     <%= f.submit 'Update', :class => 'button right' %>
   <% end %>
 </div>

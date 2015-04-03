@@ -18,6 +18,10 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(secure_params)
+      if @user.category == 'club' and @user.category != 'admin'
+        @user.role = 'manager'
+        @user.save
+      end
       redirect_to users_path, :notice => "User updated."
     else
       redirect_to users_path, :alert => "Unable to update user."
