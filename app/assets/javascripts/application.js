@@ -16,9 +16,13 @@
 //= require bootstrap-sprockets
 //= require ckeditor/init
 //= require cocoon
-
+//= require jquery.newsTicker.min
+//= require jquery.easing.min
+//= require jquery.easy-ticker.min
+//= require news
 /* affix the navbar after scroll below header */
 
+   
 
 function showRegisterForm(){
     $('.loginBox').fadeOut('fast',function(){

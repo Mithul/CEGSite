@@ -20,7 +20,7 @@
         <td><%= news.date %></td>
         <td><%= link_to 'Show', news %></td>
         <td><%= link_to 'Edit', edit_news_path(news) %></td>
-        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } news.user == current_user%></td>
+        <td><%= link_to 'Destroy', news, method: :delete, data: { confirm: 'Are you sure?' } if news.user == current_user%></td>
       </tr>
     <% end %>
   </tbody>

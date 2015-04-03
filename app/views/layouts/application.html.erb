@@ -68,8 +68,27 @@
           <div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstraptaste</a></p></div>
       </div>
     </div>
-
-  </section>
+</section>
+<div id="footer">
+  <div class="container">
+    <p class="text-muted">Coded wid love by <a href="http://www.annauniv.edu">CTF</a></p>
+  </div>
+</div>
+<% if !@roller.empty? %>
+<div class="newsRoller">
+        <div class="row">
+        <div class="col-md-12 centered">
+          <div id="bottom-ticker-container">
+                    <ul id="bottom-ticker" class="newsTicker">
+                      <% @roller.each do |news| %>
+                        <li><%=  news.name %> : <%=  news.description[0..100].html_safe %><%= link_to 'Read more', news%></li>
+                      <% end %>
+                    </ul>
+                </div>
+        </div>
+</div>
+<% end %>
+  
 
 <!--end of footer -->
 
