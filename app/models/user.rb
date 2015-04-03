@@ -14,6 +14,7 @@ class User < ActiveRecord::Base
   	else
   		self.role = :user
   	end
+    self.category = :student
   end
 
   def to_label

@@ -164,7 +164,7 @@ outline: 5px solid black;
         <td><%= event.location %></td>
         <td><%= link_to 'Show', event %></td>
         <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } if event.user == current_user %></td>
       </tr>
     <% end %>
   </tbody>
@@ -177,5 +177,4 @@ outline: 5px solid black;
   <div class="col-md-4 myButton"><%= link_to 'Add A New Event', new_event_path %></div>
   <div class="col-md-2"></div>
 </div>
-
 

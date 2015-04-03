@@ -1,10 +1,26 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :approve, :apply]
 
   # GET /projects
   # GET /projects.json
   def index
     @projects = Project.all
+  end
+
+  def approval
+    @projects = Project.all
+  end
+
+  def approve
+    @project.status = 'completed'
+    @project.save
+    redirect_to :back, notice: 'Project was successfully Approved.'
+  end
+
+  def apply
+    @project.status = 'pending'
+    @project.save
+    redirect_to :back, notice: 'Project was successfully Approved.'
   end
 
   # GET /projects/1
@@ -28,6 +44,7 @@ class ProjectsController < ApplicationController
   # POST /projects.json
   def create
     @project = Project.new(project_params)
+    @project.status = :in_progress
     puts @project.members
 
     respond_to do |format|

@@ -3,7 +3,7 @@ class CreateProjects < ActiveRecord::Migration
     create_table :projects do |t|
       t.string :name
       t.text :description
-      t.string :status
+      t.integer :status
       t.string :domain
       t.references :mentor
 
