@@ -3,6 +3,17 @@ class User < ActiveRecord::Base
   enum category: [:student, :staff, :club]
   after_initialize :set_default_role, :if => :new_record?
 
+  before_save :ensure_authentication_token
+ 
+  def ensure_authentication_token
+    if authentication_token.blank?
+      self.authentication_token = generate_authentication_token
+    end
+  end
+ 
+  
+
+
   has_and_belongs_to_many :projects
   has_many :projects
   has_many :events
@@ -25,4 +36,14 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
+
+  private
+  
+  def generate_authentication_token
+    loop do
+      token = Devise.friendly_token
+      break token unless User.where(authentication_token: token).first
+    end
+  end
+  
 end
