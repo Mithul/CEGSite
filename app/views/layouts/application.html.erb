@@ -9,6 +9,8 @@
 </head>
 <body>
 
+
+
 <!-- Wrap all page content here -->
 <div id="wrap">
   
@@ -24,7 +26,7 @@
 
       <div class="col-md-6">
         <h1 id = "ceg" style = 'font-family: Copperplate,"Copperplate Gothic Light",fantasy,80px;'><a href="#" title="Bootstrap Template">College <br>Of <br>Engineering</a></h1>
-          
+        <%= image_tag 'ul.jpg' , class: '' %>
       </div>
       <div class="col-md-3">
         
@@ -41,90 +43,19 @@
 
 
   
+
 <!-- start of navbar -->
 
 <%= render 'layouts/navigation' %>
   
-
+  
 
 <!-- start of navbar -->
 
 
 
 
-<!--login/signup-->
 
-<div class="container">
-        
-       
-         
-         <div class="modal fade login" id="loginModal">
-              <div class="modal-dialog login animated">
-                  <div class="modal-content">
-                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Login with</h4>
-                    </div>
-                    <div class="modal-body">  
-                        <div class="box">
-                             <div class="content">
-                                <div class="social">
-                                    <a class="circle github" href="/auth/github">
-                                        <i class="fa fa-github fa-fw"></i>
-                                    </a>
-                                    <a id="google_login" class="circle google" href="/auth/google_oauth2">
-                                        <i class="fa fa-google-plus fa-fw"></i>
-                                    </a>
-                                    <a id="facebook_login" class="circle facebook" href="/auth/facebook">
-                                        <i class="fa fa-facebook fa-fw"></i>
-                                    </a>
-                                </div>
-                                <div class="division">
-                                    <div class="line l"></div>
-                                      <span>or</span>
-                                    <div class="line r"></div>
-                                </div>
-                                <div class="error"></div>
-                                <div class="form loginBox">
-                                    <form method="post" action="/login" accept-charset="UTF-8">
-                                    <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                    <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                    <input class="btn btn-default btn-login" type="button" value="Login" onclick="loginAjax()">
-                                    </form>
-                                </div>
-                             </div>
-                        </div>
-                        <div class="box">
-                            <div class="content registerBox" style="display:none;">
-                             <div class="form">
-                                <form method="post" html="{:multipart=>true}" data-remote="true" action="/register" accept-charset="UTF-8">
-                                <input id="email" class="form-control" type="text" placeholder="Email" name="email">
-                                <input id="password" class="form-control" type="password" placeholder="Password" name="password">
-                                <input id="password_confirmation" class="form-control" type="password" placeholder="Repeat Password" name="password_confirmation">
-                                <input class="btn btn-default btn-register" type="submit" value="Create account" name="commit">
-                                </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="forgot login-footer">
-                            <span>Looking to 
-                                 <a href="javascript: showRegisterForm();">create an account</a>
-                            ?</span>
-                        </div>
-                        <div class="forgot register-footer" style="display:none">
-                             <span>Already have an account?</span>
-                             <a href="javascript: showLoginForm();">Login</a>
-                        </div>
-                    </div>        
-                  </div>
-              </div>
-          </div>
-    </div>
-
-
-<!--end of login/signup-->
 
 <div id="main">
   <% if !(params[:controller]=='visitors' and params[:action]=='index') %>
@@ -137,7 +68,25 @@
 </div>
 <!--start of footer -->
 
+<section id="footer" class="section footer">
+    <div class="container">
+      <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
+        <div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>       
+        </div>
+      </div>
 
+      <div class="row align-center copyright">
+          <div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstraptaste</a></p></div>
+      </div>
+    </div>
+</section>
 <div id="footer">
   <div class="container">
     <p class="text-muted">Coded wid love by <a href="http://www.annauniv.edu">CTF</a></p>
@@ -157,6 +106,7 @@
         </div>
 </div>
 <% end %>
+  
 
 <!--end of footer -->
 
