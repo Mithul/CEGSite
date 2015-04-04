@@ -82,7 +82,7 @@
                         <li>No News Yet !!! </li>
                       <% end %>
                       <% @roller.each do |news| %>
-                        <li><%= news.description[1..100] %><%= link_to 'Read more...', news %> </li>
+                        <li><%=raw news.description[0..100] %><%= link_to 'Read more...', news %> </li>
                       <% end %>
                     </ul>
                     <i class="fa fa-arrow-down" id="nt-example1-next"></i>
