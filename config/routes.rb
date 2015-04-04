@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get '/approval/' ,to: 'projects#approval', as: :approval
   get '/apply/:id' ,to: 'projects#apply', as: :apply
   post '/save_static' ,to: 'statics#save', as: :save_static
+  get 'tags/:tag', to: 'projects#index', as: :tag
 
   namespace :api do
   namespace :v1 do

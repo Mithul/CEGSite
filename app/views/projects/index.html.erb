@@ -126,7 +126,7 @@ outline: 5px solid black;
     <% @projects.each do |project| %>
       <tr>
         <td><%= project.name %></td>
-        <td><%= project.description %></td>
+        <td><%= raw project.description %></td>
         <td><%= project.status.split('_').join(' ').titleize %></td>
         <td><%= project.domain %></td>
         <td><%= project.mentor.name %></td>
@@ -147,9 +147,12 @@ outline: 5px solid black;
             <% end %>
           <% end %>
         <% end %>
-        <td><%= link_to 'Show', project %></td>
-        <td><%= link_to 'Edit', edit_project_path(project) %></td>
-        <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if project.members.include? current_user %></td>
+
+          <td><%= link_to 'Show', project %></td>
+        <% if current_user and (project.members.include? current_user or current_user.role == 'admin') %>
+          <td><%= link_to 'Edit', edit_project_path(project) %></td>
+          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } if project.members.include? current_user %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>

@@ -24,6 +24,8 @@
   <strong>Mentor:</strong>
   <%= @project.mentor.name %>
 </p>
+
+<%= raw @project.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
 <p>
   <strong>Memebers:</strong>
   <% @project.members.each do |member| %>
