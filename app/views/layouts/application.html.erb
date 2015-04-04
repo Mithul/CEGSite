@@ -12,7 +12,7 @@
 
 
 <!-- Wrap all page content here -->
-<div id="wrap">
+<div id="wrap" style = "position:relative;">
   
 
 <!--start of title page-->
@@ -50,8 +50,13 @@
 </div>
 <!--start of footer -->
 
-<section id="footer" class="section footer">
-    <div class="container">
+
+
+
+<div id = "final_footer" style = "height:100px; background-color:black; position: absolute; 
+bottom: 0;">
+<!-- <section id="footer" class="section footer" > -->
+    <div class="container" style = "padding-bottom: 0px; clear:both;">
       <div class="row animated opacity mar-bot20" data-andown="fadeIn" data-animation="animation">
         <div class="col-sm-12 align-center">
                     <ul class="social-network social-circle">
@@ -64,16 +69,23 @@
         </div>
       </div>
 
-      <div class="row align-center copyright">
+      <!-- <div class="row align-center copyright">
           <div class="col-sm-12"><p>Copyright &copy; 2014 Amoeba - by <a href="http://bootstraptaste.com">Bootstraptaste</a></p></div>
-      </div>
+      </div> -->
     </div>
-</section>
-<div id="footer">
+    <br>
+    <ul style = "list-style-type: none; margin: 0; padding-bottom: 0px; ">
+      <li style = "display:inline"><strong>Maps and Directions&nbsp;&nbsp;|&nbsp;</strong></li>
+      <li style = "display:inline"><strong>Alumni Info &nbsp;&nbsp;|&nbsp;</strong></li>
+      <li style = "display:inline"><strong>Emergency Info&nbsp;&nbsp;|&nbsp;</strong></li>
+    </ul>
+<!-- </section> -->
+</div>
+<!-- <div id="footer">
   <div class="container">
     <p class="text-muted">Coded wid love by <a href="http://www.annauniv.edu">CTF</a></p>
   </div>
-</div>
+</div> -->
 <% if !@roller.empty? %>
 <div class="newsRoller">
         <div class="row">

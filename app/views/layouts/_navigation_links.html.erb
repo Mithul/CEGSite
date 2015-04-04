@@ -11,6 +11,7 @@
 <li><%= link_to 'News', news_index_path %></li>
 <li><%= link_to 'Projects', projects_path %></li>
 <li><%= link_to 'Events', events_path %></li>
+<li><%= link_to 'Departments', events_path %></li>
 <% if user_signed_in? %>
   <li><%= link_to 'Edit account', edit_user_registration_path %></li>
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
