@@ -1,5 +1,94 @@
 <style>
 
+  /*accordion starts*/
+
+  /*Now the styles*/
+* {
+  margin: 0; 
+  padding: 0;
+}
+body {
+  background: #ccc; 
+  font-family: arial, verdana, tahoma;
+}
+
+/*Time to apply widths for accordian to work
+Width of image = 640px
+total images = 5
+so width of hovered image = 640px
+width of un-hovered image = 40px - you can set this to anything
+so total container width = 640 + 40*4 = 800px;
+default width = 800/5 = 160px;
+*/
+
+.accordian {
+  width: 805px; height: 320px;
+  overflow: hidden;
+  
+  /*Time for some styling*/
+  margin: 100px auto;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.35);
+}
+
+/*A small hack to prevent flickering on some browsers*/
+.accordian ul {
+  width: 2000px;
+  /*This will give ample space to the last item to move
+  instead of falling down/flickering during hovers.*/
+}
+
+.accordian li {
+  position: relative;
+  display: block;
+  width: 160px;
+  float: left;
+  
+  border-left: 1px solid #888;
+  
+  box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 25px 10px rgba(0, 0, 0, 0.5);
+  
+  /*Transitions to give animation effect*/
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  /*If you hover on the images now you should be able to 
+  see the basic accordian*/
+}
+
+/*Reduce with of un-hovered elements*/
+.accordian ul:hover li {width: 40px;}
+/*Lets apply hover effects now*/
+/*The LI hover style should override the UL hover style*/
+.accordian ul li:hover {width: 640px;}
+
+
+.accordian li img {
+  display: block;
+}
+
+/*Image title styles*/
+.image_title {
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  left: 0; bottom: 0; 
+width: 640px; 
+
+}
+.image_title a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 16px;
+}
+
+
+  /*accordion ends*/
+
   table { 
   border: solid;
   border-radius: 5px;
@@ -84,7 +173,7 @@
   
     width: 140px;
     height: 140px;
-    background-color: #474747;
+    background-color: #3366FF;
     box-shadow: 10px 10px 5px #888888;
 
 }
@@ -177,4 +266,158 @@ outline: 5px solid black;
   <div class="col-md-4 myButton"><%= link_to 'Add A New Event', new_event_path %></div>
   <div class="col-md-2"></div>
 </div>
+
+<!-- We will make a simple accordian with hover effects 
+The markup will have a list with images and the titles-->
+<div class="accordian">
+  <ul>
+    <li>
+      <div class="image_title">
+        <a href="#">KungFu Panda</a>
+      </div>
+      <a href="#">
+        <img src="http://thecodeplayer.com/uploads/media/3yiC6Yq.jpg" height="300px"/>
+      </a>
+    </li>
+    <li>
+      <div class="image_title">
+        <a href="#">Toy Story 2</a>
+      </div>
+      <a href="#">
+        <img src="http://thecodeplayer.com/uploads/media/40Ly3VB.jpg" height="300px"/>
+      </a>
+    </li>
+    <li>
+      <div class="image_title">
+        <a href="#">Wall-E</a>
+      </div>
+      <a href="#">
+        <img src="http://thecodeplayer.com/uploads/media/00kih8g.jpg" height="300px"/>
+      </a>
+    </li>
+    <li>
+      <div class="image_title">
+        <a href="#">Up</a>
+      </div>
+      <a href="#">
+        <img src="http://thecodeplayer.com/uploads/media/2rT2vdx.jpg" height="300px"/>
+      </a>
+    </li>
+    <li>
+      <div class="image_title">
+        <a href="#">Cars 2</a>
+      </div>
+      <a href="#">
+        <img src="http://thecodeplayer.com/uploads/media/8k3N3EL.jpg" height="300px"/>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+<div class="bs-example">
+    <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">1. What is HTML?</a>
+                </h4>
+            </div>
+            <div id="collapseOne" class="panel-collapse collapse in">
+                <div class="panel-body">
+                    <p>HTML stands for HyperText Markup Language. HTML is the main markup language for describing the structure of Web pages. <a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">2. What is Bootstrap?</a>
+                </h4>
+            </div>
+            <div id="collapseTwo" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>Bootstrap is a powerful front-end framework for faster and easier web development. It is a collection of CSS and HTML conventions. <a href="http://www.tutorialrepublic.com/twitter-bootstrap-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">3. What is CSS?</a>
+                </h4>
+            </div>
+            <div id="collapseThree" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <p>CSS stands for Cascading Style Sheet. CSS allows you to specify various style properties for a given HTML element such as colors, backgrounds, fonts etc. <a href="http://www.tutorialrepublic.com/css-tutorial/" target="_blank">Learn more.</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% @events.each do |event| %>
+
+<div class="row">
+
+  <div class="col-md-8">
+
+  <h3><bold><span style = "color:#990000;"><%= event.name %></bold></h3>
+  <h4><strong><span style = "color:#990000;">Date:&nbsp;</span></strong><%= event.date %></h4>
+  <h4><strong><span style = "color:#990000;">Venue:&nbsp;</span></strong><%= event.location %></h4>
+  <h4><strong><span style = "color:#990000;">Conducted by:&nbsp;</span></strong><%= event.club %></h4>
+  <p><%= link_to 'Show', event %>|<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+
+  <div class="col-md-4" id = "event_date">
+    <div id = "date" onmouseover="this.style.color='yellow';" onmouseout="this.style.color='black';">April<br><span style = "font-size:60px;">4</span></div>
+    
+  </div>
+    
+    
+
+  </div>
+
+<% end %>
+
+
+<div class="DemoBS2">
+  <% @events.each do |event| %>
+
+<div class="panel-group" id="accordion">
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion"
+                href="#accordionOne">
+              <%= event.name %>
+            </a>
+          </h4>
+        </div>
+        <div id="accordionOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+          <div id = "row">
+          <div class="col-md-9">
+               <h4><strong><span style = "color:#990000;">Date:&nbsp;</span></strong><%= event.date %></h4>
+  <h4><strong><span style = "color:#990000;">Venue:&nbsp;</span></strong><%= event.location %></h4>
+  <h4><strong><span style = "color:#990000;">Conducted by:&nbsp;</span></strong><%= event.club %></h4>
+  <p><%= link_to 'Show', event %>|<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+  </div>
+  <div class="col-md-3" id = "event_date">
+    <div id = "date" onmouseover="this.style.color='yellow';" onmouseout="this.style.color='black';">April<br><span style = "font-size:60px;">4</span></div>
+    </div>
+  </div>
+  </div>
+            </div>
+        </div>
+
+      </div>
+
+  <% end %>
+      </div>
+
+
 
