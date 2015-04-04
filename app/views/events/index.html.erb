@@ -8,7 +8,7 @@
   padding: 0;
 }
 body {
-  background: #ccc; 
+   
   font-family: arial, verdana, tahoma;
 }
 
@@ -179,7 +179,8 @@ width: 640px;
 }
 
 #event_date:hover{
-outline: 5px solid black;
+
+border-radius: 15px;
 }
 
 #date {
@@ -221,8 +222,8 @@ outline: 5px solid black;
   <h4><strong><span style = "color:#990000;">Conducted by:&nbsp;</span></strong><%= event.club %></h4>
   <p><%= link_to 'Show', event %>|<%= link_to 'Edit', edit_event_path(event) %>|<%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></p>
   </div>
-  <div class="col-md-3" id = "event_date">
-    <div id = "date" onmouseover="this.style.color='yellow';" onmouseout="this.style.color='black';">April<br><span style = "font-size:60px;">4</span></div>
+  <div class="col-md-3" id = "event_date" onmouseover="this.style.border-radius=5px;">
+    <div id = "date" >April<br><span style = "font-size:60px;">4</span></div>
     </div>
   </div>
   </div>
